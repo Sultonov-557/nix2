@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ pkgs, ... }:
 {
   xdg.configFile."nvim" = {
     source = ../config/neovim;

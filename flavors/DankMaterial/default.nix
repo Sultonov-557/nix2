@@ -6,7 +6,7 @@
   description = "Hyprland + DankMaterialShell";
 
   specialisation =
-    { config, pkgs, ... }:
+    { ... }:
     {
       imports = [
         ./system

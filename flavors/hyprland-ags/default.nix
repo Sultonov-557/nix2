@@ -8,7 +8,7 @@
   # Specialisation configuration
   # This defines what gets added when this flavor is selected in GRUB
   specialisation =
-    { config, pkgs, ... }:
+    { ... }:
     {
       imports = [
         ./system
