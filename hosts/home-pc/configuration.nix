@@ -1,42 +1,64 @@
 {
+  config,
+
   inputs,
   ...
 }:
 
 {
   imports = [
+    ./hardware-configuration.nix
     ../../global/system
   ];
 
-  networking.hostName = "home-pc";
+  networking.hostName = "nixos";
 
-  boot.loader = {
-    systemd-boot.enable = true;
-    efi.canTouchEfiVariables = true;
+  # Hardware-specific configurations
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
   };
 
-  # NOTE: For real hardware, generate with: nixos-generate-config
-  fileSystems."/" = {
-    device = "/dev/disk/by-label/nixos";
-    fsType = "ext4";
+  hardware.uinput.enable = true;
+  hardware.enableAllFirmware = true;
+  zramSwap.enable = true;
+
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+  };
+  services.blueman.enable = true;
+
+  # XServer configuration
+  services.xserver = {
+    enable = true;
+    videoDrivers = [ "nvidia" ];
+    xkb = {
+      layout = "us";
+      variant = "";
+    };
   };
 
-  fileSystems."/boot" = {
-    device = "/dev/disk/by-label/boot";
-    fsType = "vfat";
+  # NVIDIA Configuration
+  hardware.nvidia = {
+    modesetting.enable = true;
+    open = false;
+    nvidiaSettings = true;
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
 
+  # Home-manager configuration
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
 
-    users.nixuser = {
+    users.sultonov = {
       imports = [
         ../../global/home
       ];
 
       home.username = "sultonov";
-      home.homeDirectory = "/home/sultonov/";
+      home.homeDirectory = "/home/sultonov";
     };
 
     extraSpecialArgs = { inherit inputs; };
