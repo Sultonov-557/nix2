@@ -20,7 +20,6 @@
 
       home-manager.users.sultonov.imports = [
         ./home
-        ../../modules/nixvim
       ];
     };
 }

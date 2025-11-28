@@ -10,11 +10,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nixvim = {
-      url = "github:nix-community/nixvim";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     # Dev tools
     pre-commit-hooks.url = "github:cachix/pre-commit-hooks.nix";
   };
@@ -30,11 +25,9 @@
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
 
-      # Auto-discover flavors from flavors/ directory
       flavorsDir = ./flavors;
       flavorNames = builtins.attrNames (builtins.readDir flavorsDir);
 
-      # Load flavor definitions
       flavors = builtins.listToAttrs (
         map (name: {
           name = name;
@@ -44,7 +37,6 @@
         }) flavorNames
       );
 
-      # Generate specialisations from flavors
       mkSpecialisations =
         flavors:
         builtins.mapAttrs (name: flavor: {
@@ -52,7 +44,6 @@
           configuration = flavor.specialisation;
         }) flavors;
 
-      # Auto-discover hosts from hosts/ directory
       hostsDir = ./hosts;
       hostNames = builtins.attrNames (builtins.readDir hostsDir);
 
@@ -70,16 +61,13 @@
             home-manager.nixosModules.home-manager
             {
               specialisation = mkSpecialisations flavors;
-              # Global home-manager config
               home-manager.users.${user} = {
-                imports = [
-                ];
+                imports = [ ];
               };
             }
           ];
         };
 
-      # Pre-commit checks
       preCommit = inputs.pre-commit-hooks.lib.${system};
       preCommitCheck = preCommit.run {
         src = ./.;
