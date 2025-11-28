@@ -1,6 +1,4 @@
-{
-  ...
-}:
+{ modulesPath }:
 
 {
   # Home-Manager configuration for DankMaterial flavor
@@ -8,9 +6,9 @@
 
   imports = [
     # Reusable modules
-    ../../../modules/home/hyprland-keybinds.nix
-    ../../../modules/home/kitty.nix
-    ../../../modules/home/firefox.nix
+    (modulesPath + /home/hyprland-keybinds.nix)
+    (modulesPath + /home/kitty.nix)
+    (modulesPath + /home/firefox.nix)
 
     # Flavor-specific configs
     ./hyprland.nix

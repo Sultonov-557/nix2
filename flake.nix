@@ -88,7 +88,10 @@
       flavors = builtins.listToAttrs (
         map (name: {
           name = name;
-          value = import "${flavorsDir}/${name}" { inherit inputs; };
+          value = import "${flavorsDir}/${name}" {
+            inherit inputs self;
+            modulesPath = ./modules;
+          };
         }) flavorNames
       );
 

@@ -1,4 +1,8 @@
-{ inputs }:
+{
+  inputs,
+  self,
+  modulesPath,
+}:
 
 {
   # Flavor metadata
@@ -14,7 +18,7 @@
       ];
 
       home-manager.users.sultonov.imports = [
-        ./home
+        (import ./home { inherit modulesPath; })
         inputs.dankMaterialShell.homeModules.dankMaterialShell.default
         inputs.zen-browser.homeModules.beta
         inputs.zen-nebula.homeModules.default
