@@ -14,7 +14,7 @@
   environment.systemPackages = with pkgs; [
     xfce.thunar
 
-    rofi-wayland
+    rofi
 
     brightnessctl
 
