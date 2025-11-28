@@ -54,7 +54,6 @@
 
     users.sultonov = {
       imports = [
-        ../../global/home
       ];
 
       home.username = "sultonov";
