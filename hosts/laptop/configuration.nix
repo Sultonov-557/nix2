@@ -21,7 +21,6 @@
       ];
 
       home.username = "sultonov";
-      home.homeDirectory = "/home/sultonov/";
     };
 
     extraSpecialArgs = { inherit inputs; };

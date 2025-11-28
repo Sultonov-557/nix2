@@ -6,7 +6,7 @@
   description = "Minimal GNOME Desktop";
 
   specialisation =
-    { pkgs, modulesPath, ... }:
+    { pkgs, ... }:
     {
       services.xserver = {
         enable = true;
@@ -20,7 +20,7 @@
 
       home-manager.users.sultonov.imports = [
         ./home
-        "${modulesPath}/nixvim"
+        ../../modules/nixvim
       ];
     };
 }
