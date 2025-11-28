@@ -38,9 +38,8 @@
       flavors = builtins.listToAttrs (
         map (name: {
           name = name;
-          value = import "${flavorsDir}/${name}" {
+          value = import (flavorsDir + "/${name}") {
             inherit inputs self;
-            modulesPath = ./modules;
           };
         }) flavorNames
       );
@@ -53,6 +52,10 @@
           configuration = flavor.specialisation;
         }) flavors;
 
+      # Auto-discover hosts from hosts/ directory
+      hostsDir = ./hosts;
+      hostNames = builtins.attrNames (builtins.readDir hostsDir);
+
       mkSystem =
         {
           hostname,
@@ -63,7 +66,7 @@
           inherit system;
           specialArgs = { inherit inputs; };
           modules = [
-            ./hosts/${hostname}/configuration.nix
+            (hostsDir + "/${hostname}/configuration.nix")
             home-manager.nixosModules.home-manager
             {
               specialisation = mkSpecialisations flavors;
@@ -91,10 +94,12 @@
       };
     in
     {
-      nixosConfigurations = {
-        home-pc = mkSystem { hostname = "home-pc"; };
-        laptop = mkSystem { hostname = "laptop"; };
-      };
+      nixosConfigurations = builtins.listToAttrs (
+        map (hostname: {
+          name = hostname;
+          value = mkSystem { inherit hostname; };
+        }) hostNames
+      );
 
       checks.${system}.pre-commit = preCommitCheck;
       devShells.${system}.default = pkgs.mkShell {
