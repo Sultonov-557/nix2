@@ -8,7 +8,7 @@
 
   # Import hyprland configuration modules
   imports = [
-    ../assets/hyprland/
+    ../assets/hyprland
   ];
 
   wayland.windowManager.hyprland = {
