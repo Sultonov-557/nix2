@@ -5,7 +5,7 @@
   description = "macOS-inspired Hyprland Desktop";
 
   specialisation =
-    { ... }:
+    { pkgs, ... }:
     {
       programs.hyprland = {
         enable = true;
