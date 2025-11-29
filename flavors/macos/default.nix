@@ -19,7 +19,7 @@
       };
 
       environment.systemPackages = with pkgs; [
-        (callPackage ./sddm-theme.nix { })
+        (callPackage ./system/sddm-theme.nix { })
         whitesur-gtk-theme
         whitesur-icon-theme
         apple-cursor
