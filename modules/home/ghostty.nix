@@ -13,7 +13,7 @@
       cursor-style = "block";
       cursor-style-blink = true;
 
-      shell-integration = true;
+      shell-integration = "zsh";
       shell-integration-features = "cursor,sudo,title";
 
       confirm-close-surface = false;
