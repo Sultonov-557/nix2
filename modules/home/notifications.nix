@@ -4,26 +4,28 @@
   services.mako = {
     enable = true;
 
-    backgroundColor = "#F5F5F5E6";
-    textColor = "#1E1E1E";
-    borderColor = "#007AFF";
-    progressColor = "over #007AFF";
+    settings = {
+      background-color = "#F5F5F5E6";
+      text-color = "#1E1E1E";
+      border-color = "#007AFF";
+      progress-color = "over #007AFF";
 
-    borderRadius = 10;
-    borderSize = 2;
+      border-radius = 10;
+      border-size = 2;
 
-    width = 350;
-    height = 100;
-    margin = "10";
-    padding = "15";
+      width = 350;
+      height = 100;
+      margin = "10";
+      padding = "15";
 
-    defaultTimeout = 5000;
+      default-timeout = 5000;
 
-    font = "Inter 11";
+      font = "Inter 11";
 
-    anchor = "top-right";
+      anchor = "top-right";
 
-    layer = "overlay";
+      layer = "overlay";
+    };
 
     extraConfig = ''
       [urgency=high]
