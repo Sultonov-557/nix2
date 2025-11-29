@@ -1,0 +1,29 @@
+{ pkgs, ... }:
+
+{
+  name = "macos";
+  description = "macOS-inspired Hyprland Desktop";
+
+  specialisation =
+    { ... }:
+    {
+      programs.hyprland = {
+        enable = true;
+        xwayland.enable = true;
+      };
+
+      environment.systemPackages = with pkgs; [
+        waybar
+        rofi-wayland
+        hyprpaper
+        nautilus
+        brightnessctl
+        pamixer
+        playerctl
+      ];
+
+      home-manager.users.sultonov.imports = [
+        ./home
+      ];
+    };
+}
