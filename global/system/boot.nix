@@ -3,11 +3,6 @@
 {
   boot = {
     loader = {
-      grub2-theme = {
-        enable = true;
-        theme = "vimix";
-        footer = true;
-      };
       grub = {
         enable = true;
         useOSProber = true;
