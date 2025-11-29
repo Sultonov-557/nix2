@@ -23,9 +23,9 @@ pkgs.stdenv.mkDerivation {
     PartialBlur=false
     BlurRadius=20
 
-    MainColor="#007AFF"
-    AccentColor="#007AFF"
-    BackgroundColor="#F5F5F5"
+    MainColor="#0A84FF"
+    AccentColor="#0A84FF"
+    BackgroundColor="#1E1E1E"
     OverrideLoginButtonTextColor="#FFFFFF"
 
     Font="Inter"

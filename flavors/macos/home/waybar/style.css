@@ -7,10 +7,10 @@
 }
 
 window#waybar {
-  background: rgba(245, 245, 245, 0.85);
-  color: #1E1E1E;
+  background: rgba(30, 30, 30, 0.85);
+  color: #FFFFFF;
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(209, 209, 214, 0.5);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 #workspaces {
@@ -26,18 +26,18 @@ window#waybar {
 }
 
 #workspaces button:hover {
-  background: rgba(0, 0, 0, 0.05);
-  color: #1E1E1E;
+  background: rgba(255, 255, 255, 0.1);
+  color: #FFFFFF;
 }
 
 #workspaces button.active {
-  color: #007AFF;
-  background: rgba(0, 122, 255, 0.1);
+  color: #0A84FF;
+  background: rgba(10, 132, 255, 0.1);
 }
 
 #clock {
   padding: 0 16px;
-  color: #1E1E1E;
+  color: #FFFFFF;
   font-weight: 500;
 }
 
@@ -47,7 +47,7 @@ window#waybar {
 #battery,
 #custom-user {
   padding: 0 12px;
-  color: #1E1E1E;
+  color: #FFFFFF;
   background: transparent;
   border-radius: 6px;
   margin: 0 2px;
@@ -58,7 +58,7 @@ window#waybar {
 #network:hover,
 #battery:hover,
 #custom-user:hover {
-  background: rgba(0, 0, 0, 0.05);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 #pulseaudio.muted {
@@ -80,9 +80,12 @@ window#waybar {
 }
 
 @keyframes blink {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: 1;
   }
+
   50% {
     opacity: 0.5;
   }
@@ -92,10 +95,10 @@ window#waybar {
   color: #FF3B30;
 }
 
-#tray > .passive {
+#tray>.passive {
   -gtk-icon-effect: dim;
 }
 
-#tray > .needs-attention {
+#tray>.needs-attention {
   -gtk-icon-effect: highlight;
 }

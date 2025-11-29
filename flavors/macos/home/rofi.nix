@@ -22,14 +22,14 @@
       in
       {
         "*" = {
-          bg = mkLiteral "#F5F5F5E6";
-          bg-alt = mkLiteral "#E8E8E8";
-          fg = mkLiteral "#1E1E1E";
+          bg = mkLiteral "#1E1E1EE6";
+          bg-alt = mkLiteral "#2D2D2D";
+          fg = mkLiteral "#FFFFFF";
           fg-alt = mkLiteral "#8E8E93";
 
-          border-color = mkLiteral "#007AFF";
-          selected = mkLiteral "#007AFF20";
-          selected-text = mkLiteral "#007AFF";
+          border-color = mkLiteral "#0A84FF";
+          selected = mkLiteral "#0A84FF20";
+          selected-text = mkLiteral "#0A84FF";
 
           background-color = mkLiteral "transparent";
           text-color = mkLiteral "@fg";

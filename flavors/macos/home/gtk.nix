@@ -5,12 +5,12 @@
     enable = true;
 
     theme = {
-      name = "WhiteSur-Light";
+      name = "WhiteSur-Dark";
       package = pkgs.whitesur-gtk-theme;
     };
 
     iconTheme = {
-      name = "WhiteSur";
+      name = "WhiteSur-dark";
       package = pkgs.whitesur-icon-theme;
     };
 
@@ -26,11 +26,11 @@
     };
 
     gtk3.extraConfig = {
-      gtk-application-prefer-dark-theme = false;
+      gtk-application-prefer-dark-theme = true;
     };
 
     gtk4.extraConfig = {
-      gtk-application-prefer-dark-theme = false;
+      gtk-application-prefer-dark-theme = true;
     };
   };
 
