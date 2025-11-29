@@ -1,10 +1,10 @@
-{ pkgs, ... }:
+{ ... }:
 
 {
   programs.git = {
     enable = true;
-    userName = "sultonov";
-    userEmail = "your.email@example.com";
+    userName = "sultonov-557";
+    userEmail = "sultonovzerifboy@gmail.com";
 
     delta = {
       enable = true;
@@ -17,6 +17,7 @@
 
     extraConfig = {
       init.defaultBranch = "main";
+      push.autoSetupRemote = true;
       pull.rebase = false;
       core.editor = "nvim";
       merge.conflictstyle = "diff3";
