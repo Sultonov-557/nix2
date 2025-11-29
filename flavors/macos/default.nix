@@ -27,7 +27,7 @@
         jetbrains-mono
 
         waybar
-        rofi-wayland
+        rofi
         hyprpaper
         nautilus
         brightnessctl
