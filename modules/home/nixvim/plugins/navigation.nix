@@ -53,7 +53,7 @@
     }
     {
       mode = "n";
-      key = "<leader>e";
+      key = "<leader>E";
       action = "<CMD>Neotree toggle<CR>";
       options.desc = "Toggle file explorer";
     }

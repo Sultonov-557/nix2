@@ -1,16 +1,14 @@
 {
   wayland.windowManager.hyprland.settings = {
-    monitor = ",preferred,auto,1";
-
-    env = [
-      "XCURSOR_SIZE,24"
-      "HYPRCURSOR_SIZE,24"
+    monitor = [
+      "eDP-1,1920x1080@60,0x0,1"
+      "DP-1,1920x1080@60,0x0,1"
+      "HDMI-A-1,1280x1024@60,1920x0,1"
     ];
 
-    exec-once = [
-      "waybar"
-      "hyprpaper"
-    ];
+    env = [ "XCURSOR_SIZE,24" "HYPRCURSOR_SIZE,24" ];
+
+    exec-once = [ "hyprpaper" ];
 
     general = {
       gaps_in = 8;
@@ -65,9 +63,7 @@
       kb_layout = "us";
       follow_mouse = 1;
 
-      touchpad = {
-        natural_scroll = true;
-      };
+      touchpad = { natural_scroll = true; };
 
       sensitivity = 0;
     };

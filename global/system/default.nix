@@ -8,16 +8,14 @@
     ./network.nix
     ./nix.nix
     ./audio.nix
+    ./stylix.nix
   ];
 
   # User Configuration
   users.users.sultonov = {
     isNormalUser = true;
     description = "sultonov";
-    extraGroups = [
-      "networkmanager"
-      "wheel"
-    ];
+    extraGroups = [ "networkmanager" "wheel" ];
     ignoreShellProgramCheck = true;
     shell = pkgs.zsh;
   };

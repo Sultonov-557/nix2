@@ -18,8 +18,13 @@
 
     #WM/DM
     hyprland = {
-      url = "github:hyprwm/Hyprland";
+      url = "github:hyprwm/Hyprland/nix";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    split-monitor-workspaces = {
+      url = "github:Duckonaut/split-monitor-workspaces/update-pin";
+      inputs.hyprland.follows = "hyprland";
     };
 
     #Bar/Shell
@@ -44,9 +49,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nix-flatpak = {
-      url = "github:gmodena/nix-flatpak/?ref=latest";
-    };
+    nix-flatpak = { url = "github:gmodena/nix-flatpak/?ref=latest"; };
 
     xmcl = {
       url = "github:x45iq/xmcl-nix";
@@ -57,13 +60,7 @@
     pre-commit-hooks.url = "github:cachix/pre-commit-hooks.nix";
   };
 
-  outputs =
-    {
-      self,
-      nixpkgs,
-      home-manager,
-      ...
-    }@inputs:
+  outputs = { self, nixpkgs, home-manager, ... }@inputs:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -71,32 +68,21 @@
       flavorsDir = ./flavors;
       flavorNames = builtins.attrNames (builtins.readDir flavorsDir);
 
-      flavors = builtins.listToAttrs (
-        map (name: {
-          name = name;
-          value = import (flavorsDir + "/${name}") {
-            inherit inputs self;
-          };
-        }) flavorNames
-      );
+      flavors = builtins.listToAttrs (map (name: {
+        name = name;
+        value = import (flavorsDir + "/${name}") { inherit inputs self; };
+      }) flavorNames);
 
-      mkSpecialisations =
-        flavors:
+      mkSpecialisations = flavors:
         builtins.mapAttrs (name: flavor: {
           inheritParentConfig = true;
-          _name = name;
           configuration = flavor.specialisation;
         }) flavors;
 
       hostsDir = ./hosts;
       hostNames = builtins.attrNames (builtins.readDir hostsDir);
 
-      mkSystem =
-        {
-          hostname,
-          system ? "x86_64-linux",
-          user ? "sultonov",
-        }:
+      mkSystem = { hostname, system ? "x86_64-linux", user ? "sultonov", }:
         nixpkgs.lib.nixosSystem {
           inherit system;
           specialArgs = { inherit inputs; };
@@ -105,9 +91,7 @@
             home-manager.nixosModules.home-manager
             {
               specialisation = mkSpecialisations flavors;
-              home-manager.users.${user} = {
-                imports = [ ];
-              };
+              home-manager.users.${user} = { imports = [ ]; };
             }
           ];
         };
@@ -116,31 +100,20 @@
       preCommitCheck = preCommit.run {
         src = ./.;
         hooks = {
-          nixfmt-rfc-style = {
-            enable = true;
-          };
-          deadnix = {
-            enable = true;
-          };
+          nixfmt-rfc-style = { enable = true; };
+          deadnix = { enable = true; };
         };
       };
-    in
-    {
-      nixosConfigurations = builtins.listToAttrs (
-        map (hostname: {
-          name = hostname;
-          value = mkSystem { inherit hostname; };
-        }) hostNames
-      );
+    in {
+      nixosConfigurations = builtins.listToAttrs (map (hostname: {
+        name = hostname;
+        value = mkSystem { inherit hostname; };
+      }) hostNames);
 
       checks.${system}.pre-commit = preCommitCheck;
       devShells.${system}.default = pkgs.mkShell {
         shellHook = preCommitCheck.shellHook;
-        packages = with pkgs; [
-          nixfmt-rfc-style
-          deadnix
-          git
-        ];
+        packages = with pkgs; [ nixfmt-rfc-style deadnix git ];
       };
 
       formatter.${system} = pkgs.nixfmt-rfc-style;
