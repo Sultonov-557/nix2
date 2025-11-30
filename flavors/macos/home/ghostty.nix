@@ -19,9 +19,9 @@
       "14=#64d2ff"
       "15=#ffffff"
     ];
-    background = "#1e1e1e";
-    foreground = "#ffffff";
-    background-opacity = 0.90;
+    background = "#ffffff";
+    foreground = "#000000";
+    background-opacity = 0.7;
     background-blur-radius = 20;
   };
 }

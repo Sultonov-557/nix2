@@ -10,6 +10,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nur = {
+      url = "github:nix-community/NUR";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     #Styling
     stylix = {
       url = "github:danth/stylix";
@@ -41,6 +46,16 @@
     #Apps/Tools
     nixvim = {
       url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    textfox = {
+      url = "github:adriankarlen/textfox";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    spicetify-nix = {
+      url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -89,6 +104,7 @@
           modules = [
             (hostsDir + "/${hostname}/configuration.nix")
             home-manager.nixosModules.home-manager
+            inputs.nur.modules.nixos.default
             {
               specialisation = mkSpecialisations flavors;
               home-manager.users.${user} = { imports = [ ]; };

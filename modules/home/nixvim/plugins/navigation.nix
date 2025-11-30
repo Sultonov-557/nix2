@@ -25,18 +25,7 @@
       };
     };
 
-    neo-tree = {
-      enable = true;
-      closeIfLastWindow = true;
-      window = {
-        width = 30;
-        autoExpandWidth = false;
-      };
-      filesystem = {
-        followCurrentFile.enabled = true;
-        useLibuvFileWatcher = true;
-      };
-    };
+    nvim-tree = { enable = true; };
 
     harpoon = {
       enable = true;
@@ -54,7 +43,7 @@
     {
       mode = "n";
       key = "<leader>E";
-      action = "<CMD>Neotree toggle<CR>";
+      action = "<CMD>NvimTreeToggle<CR>";
       options.desc = "Toggle file explorer";
     }
   ];

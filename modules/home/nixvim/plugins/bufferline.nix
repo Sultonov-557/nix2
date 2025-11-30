@@ -27,14 +27,12 @@
             return s
           end
         '';
-        offsets = [
-          {
-            filetype = "neo-tree";
-            text = "File Explorer";
-            text_align = "center";
-            separator = true;
-          }
-        ];
+        offsets = [{
+          filetype = "nvim-tree";
+          text = "File Explorer";
+          text_align = "center";
+          separator = true;
+        }];
         show_buffer_icons = true;
         show_buffer_close_icons = true;
         show_close_icon = true;

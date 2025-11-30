@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 {
   gtk = {
@@ -20,18 +20,9 @@
       size = 24;
     };
 
-    font = {
-      name = "Inter";
-      size = 11;
-    };
+    gtk3.extraConfig = { gtk-application-prefer-dark-theme = true; };
 
-    gtk3.extraConfig = {
-      gtk-application-prefer-dark-theme = true;
-    };
-
-    gtk4.extraConfig = {
-      gtk-application-prefer-dark-theme = true;
-    };
+    gtk4.extraConfig = { gtk-application-prefer-dark-theme = true; };
   };
 
   home.pointerCursor = {
@@ -43,7 +34,7 @@
 
   qt = {
     enable = true;
-    platformTheme.name = "gtk";
+    platformTheme.name = lib.mkForce "gtk";
     style.name = "adwaita";
   };
 }

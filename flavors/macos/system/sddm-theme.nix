@@ -14,10 +14,10 @@ pkgs.stdenv.mkDerivation {
   installPhase = ''
         mkdir -p $out/share/sddm/themes/macos
         cp -r * $out/share/sddm/themes/macos/
-        
+
         cat > $out/share/sddm/themes/macos/theme.conf << EOF
     [General]
-    Background="${../assets/wallpaper.jpg}"
+    Background="${../assets/wallpaper-light.jpg}"
     ScaleImageCropped=true
     FullBlur=true
     PartialBlur=false

@@ -2,14 +2,7 @@
 
 {
 
-  imports = [
-    ./boot.nix
-    ./locale.nix
-    ./network.nix
-    ./nix.nix
-    ./audio.nix
-    ./stylix.nix
-  ];
+  imports = [ ./boot.nix ./locale.nix ./network.nix ./nix.nix ./audio.nix ];
 
   # User Configuration
   users.users.sultonov = {
