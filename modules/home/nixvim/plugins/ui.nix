@@ -1,6 +1,8 @@
 {
-
   plugins = {
+    # Icons for file types
+    web-devicons.enable = true;
+
     lualine = {
       enable = true;
       settings = {
@@ -63,7 +65,19 @@
           }
           {
             __unkeyed-1 = "<leader>t";
-            group = "Toggle/Trouble";
+            group = "Terminal/Todo";
+          }
+          {
+            __unkeyed-1 = "<leader>x";
+            group = "Diagnostics/Trouble";
+          }
+          {
+            __unkeyed-1 = "<leader>q";
+            group = "Session/Quit";
+          }
+          {
+            __unkeyed-1 = "<leader>d";
+            group = "Diagnostics";
           }
         ];
       };

@@ -9,8 +9,12 @@
     ./git.nix
     ./lsp.nix
     ./navigation.nix
+    ./persistence.nix
     ./telescope.nix
+    ./terminal.nix
+    ./todo-comments.nix
     ./treesitter.nix
+    ./trouble.nix
     ./ui.nix
   ];
 }

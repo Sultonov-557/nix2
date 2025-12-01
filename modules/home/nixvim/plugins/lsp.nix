@@ -28,6 +28,14 @@
         cssls.enable = true;
         jsonls.enable = true;
         tailwindcss.enable = true;
+
+        # Additional language servers
+        gopls.enable = true;
+        clangd.enable = true;
+        bashls.enable = true;
+        yamlls.enable = true;
+        dockerls.enable = true;
+        marksman.enable = true;
       };
 
       keymaps = {
@@ -75,11 +83,11 @@
             action = "goto_next";
             desc = "Next diagnostic";
           };
-          "<leader>e" = {
+          "<leader>de" = {
             action = "open_float";
             desc = "Show diagnostic";
           };
-          "<leader>q" = {
+          "<leader>dq" = {
             action = "setloclist";
             desc = "Diagnostic loclist";
           };

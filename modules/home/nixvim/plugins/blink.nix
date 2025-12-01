@@ -1,5 +1,14 @@
-{ ... }: {
+{ pkgs, ... }: {
   plugins = {
+    # Snippets
+    luasnip = {
+      enable = true;
+      fromVscode = [
+        { paths = "${pkgs.vimPlugins.friendly-snippets}"; }
+      ];
+    };
+
+    # Blink completion extensions
     blink-cmp-dictionary.enable = true;
     blink-cmp-spell.enable = true;
     blink-copilot.enable = true;
@@ -31,8 +40,14 @@
         };
         signature.enabled = true;
         sources = {
-          default = [ "lsp" "path" "snippets" "buffer" ];
+          default = [ "lsp" "path" "luasnip" "buffer" ];
           cmdline = [ ];
+          providers = {
+            luasnip = {
+              name = "luasnip";
+              module = "blink.cmp.sources.luasnip";
+            };
+          };
         };
       };
     };

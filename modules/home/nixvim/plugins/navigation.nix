@@ -1,21 +1,53 @@
 {
   plugins = {
+    # File tree
+    nvim-tree = {
+      enable = true;
+      disableNetrw = true;
+      updateFocusedFile.enable = true;
+      renderer = {
+        groupEmpty = true;
+        highlightGit = true;
+        icons = {
+          show = {
+            file = true;
+            folder = true;
+            folderArrow = true;
+            git = true;
+          };
+        };
+      };
+      view = {
+        width = 30;
+        side = "left";
+      };
+      filters = {
+        dotfiles = false;
+        custom = [ "^\\.git$" ];
+      };
+    };
+
+    # Harpoon - Quick file navigation (harpoon2)
+    harpoon = {
+      enable = true;
+      enableTelescope = true;
+    };
+
+    # Oil - Edit filesystem like a buffer
     oil = {
       enable = true;
       settings = {
-        default_file_explorer = true;
-        delete_to_trash = true;
-        skip_confirm_for_simple_edits = true;
-        view_options = {
-          show_hidden = true;
-          natural_order = true;
-        };
+        columns = [ "icon" ];
+        view_options = { show_hidden = true; };
         keymaps = {
           "g?" = "actions.show_help";
           "<CR>" = "actions.select";
           "<C-v>" = "actions.select_vsplit";
           "<C-x>" = "actions.select_split";
           "<C-t>" = "actions.select_tab";
+          "<C-p>" = "actions.preview";
+          "<C-c>" = "actions.close";
+          "<C-r>" = "actions.refresh";
           "-" = "actions.parent";
           "_" = "actions.open_cwd";
           "`" = "actions.cd";
@@ -25,26 +57,103 @@
       };
     };
 
-    nvim-tree = { enable = true; };
-
-    harpoon = {
+    # Undotree - Visualize undo history
+    undotree = {
       enable = true;
-      enableTelescope = true;
+      settings = {
+        autoOpenDiff = true;
+        focusOnToggle = true;
+      };
+    };
+
+    # Marks - Better mark visualization
+    marks = {
+      enable = true;
+      defaultMappings = true;
+      signs = true;
+      cyclic = true;
     };
   };
 
   keymaps = [
+    # File tree toggle - Using lowercase 'e' as requested
     {
       mode = "n";
-      key = "-";
-      action = "<CMD>Oil<CR>";
-      options.desc = "Open parent directory";
+      key = "<leader>e";
+      action = "<cmd>NvimTreeToggle<CR>";
+      options.desc = "Toggle file tree";
     }
     {
       mode = "n";
       key = "<leader>E";
-      action = "<CMD>NvimTreeToggle<CR>";
-      options.desc = "Toggle file explorer";
+      action = "<cmd>NvimTreeFindFile<CR>";
+      options.desc = "Find file in tree";
+    }
+
+    # Oil keybind
+    {
+      mode = "n";
+      key = "-";
+      action = "<cmd>Oil<CR>";
+      options.desc = "Open oil (directory editor)";
+    }
+
+    # Undotree
+    {
+      mode = "n";
+      key = "<leader>u";
+      action = "<cmd>UndotreeToggle<CR>";
+      options.desc = "Toggle undotree";
+    }
+
+    # Harpoon2 keybinds
+    {
+      mode = "n";
+      key = "<leader>ha";
+      action.__raw = "function() require('harpoon'):list():add() end";
+      options.desc = "Harpoon add file";
+    }
+    {
+      mode = "n";
+      key = "<leader>hh";
+      action.__raw = "function() require('harpoon').ui:toggle_quick_menu(require('harpoon'):list()) end";
+      options.desc = "Harpoon menu";
+    }
+    {
+      mode = "n";
+      key = "<leader>h1";
+      action.__raw = "function() require('harpoon'):list():select(1) end";
+      options.desc = "Harpoon file 1";
+    }
+    {
+      mode = "n";
+      key = "<leader>h2";
+      action.__raw = "function() require('harpoon'):list():select(2) end";
+      options.desc = "Harpoon file 2";
+    }
+    {
+      mode = "n";
+      key = "<leader>h3";
+      action.__raw = "function() require('harpoon'):list():select(3) end";
+      options.desc = "Harpoon file 3";
+    }
+    {
+      mode = "n";
+      key = "<leader>h4";
+      action.__raw = "function() require('harpoon'):list():select(4) end";
+      options.desc = "Harpoon file 4";
+    }
+    {
+      mode = "n";
+      key = "<leader>hp";
+      action.__raw = "function() require('harpoon'):list():prev() end";
+      options.desc = "Harpoon prev";
+    }
+    {
+      mode = "n";
+      key = "<leader>hn";
+      action.__raw = "function() require('harpoon'):list():next() end";
+      options.desc = "Harpoon next";
     }
   ];
 }
