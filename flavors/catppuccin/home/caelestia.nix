@@ -9,17 +9,11 @@
       target = "graphical-session.target";
     };
 
-    settings = {
-      bar = { status = { showBattery = true; }; };
-      paths = { wallpaperDir = "~/Pictures/Wallpapers"; };
-    };
+    settings = { paths = { wallpaperDir = ../assets; }; };
 
     cli = {
       enable = true;
       settings = { theme = { enableGtk = true; }; };
     };
   };
-
-  # Ensure wallpaper directory exists
-  home.file."Pictures/Wallpapers/.keep".text = "";
 }

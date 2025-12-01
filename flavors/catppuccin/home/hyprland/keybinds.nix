@@ -6,7 +6,6 @@
     "$ctrlMod" = "CTRL_SUPER";
 
     # Caelestia-shell launcher
-    bindi = [ "$mod, Super_L, global, caelestia:launcher" ];
 
     bindin = [
       "$mod, mouse:272, global, caelestia:launcherInterrupt"
@@ -35,6 +34,7 @@
     ];
 
     bind = [
+      "$mod, SPACE, global, caelestia:launcher"
       "$ctrlMod SHIFT, L, global, caelestia:session"
       "$mod SHIFT, L, global, caelestia:lock"
       "$mod SHIFT, P, global, caelestia:showall"
@@ -51,30 +51,17 @@
       "$mod, E, exec, nautilus"
       "$mod, B, exec, firefox"
 
-      "$ctrlMod, M, exec, caelestia toggle sysmon"
-      "$ctrlMod, P, exec, caelestia toggle music"
-      "$ctrlMod, D, exec, caelestia toggle communication"
-      "$ctrlMod, T, exec, caelestia toggle todo"
-
       # Focus
       "$mod, left, movefocus, l"
       "$mod, right, movefocus, r"
       "$mod, up, movefocus, u"
       "$mod, down, movefocus, d"
-      "$mod, h, movefocus, l"
-      "$mod, l, movefocus, r"
-      "$mod, k, movefocus, u"
-      "$mod, j, movefocus, d"
 
       # Move windows
       "$shiftMod, left, movewindow, l"
       "$shiftMod, right, movewindow, r"
       "$shiftMod, up, movewindow, u"
       "$shiftMod, down, movewindow, d"
-      "$shiftMod, h, movewindow, l"
-      "$shiftMod, l, movewindow, r"
-      "$shiftMod, k, movewindow, u"
-      "$shiftMod, j, movewindow, d"
 
       # Window actions
       "$mod, Q, killactive,"
@@ -84,32 +71,32 @@
       "$ctrlMod, C, centerwindow, 1"
 
       # Workspace navigation
-      "$mod, 1, workspace, 1"
-      "$mod, 2, workspace, 2"
-      "$mod, 3, workspace, 3"
-      "$mod, 4, workspace, 4"
-      "$mod, 5, workspace, 5"
-      "$mod, 6, workspace, 6"
-      "$mod, 7, workspace, 7"
-      "$mod, 8, workspace, 8"
-      "$mod, 9, workspace, 9"
-      "$mod, 0, workspace, 10"
+      "$mod, 1, split-workspace, 1"
+      "$mod, 2, split-workspace, 2"
+      "$mod, 3, split-workspace, 3"
+      "$mod, 4, split-workspace, 4"
+      "$mod, 5, split-workspace, 5"
+      "$mod, 6, split-workspace, 6"
+      "$mod, 7, split-workspace, 7"
+      "$mod, 8, split-workspace, 8"
+      "$mod, 9, split-workspace, 9"
+      "$mod, 0, split-workspace, 10"
 
       # Move window to workspace
-      "$shiftMod, 1, movetoworkspace, 1"
-      "$shiftMod, 2, movetoworkspace, 2"
-      "$shiftMod, 3, movetoworkspace, 3"
-      "$shiftMod, 4, movetoworkspace, 4"
-      "$shiftMod, 5, movetoworkspace, 5"
-      "$shiftMod, 6, movetoworkspace, 6"
-      "$shiftMod, 7, movetoworkspace, 7"
-      "$shiftMod, 8, movetoworkspace, 8"
-      "$shiftMod, 9, movetoworkspace, 9"
-      "$shiftMod, 0, movetoworkspace, 10"
+      "$shiftMod, 1, split-movetoworkspace, 1"
+      "$shiftMod, 2, split-movetoworkspace, 2"
+      "$shiftMod, 3, split-movetoworkspace, 3"
+      "$shiftMod, 4, split-movetoworkspace, 4"
+      "$shiftMod, 5, split-movetoworkspace, 5"
+      "$shiftMod, 6, split-movetoworkspace, 6"
+      "$shiftMod, 7, split-movetoworkspace, 7"
+      "$shiftMod, 8, split-movetoworkspace, 8"
+      "$shiftMod, 9, split-movetoworkspace, 9"
+      "$shiftMod, 0, split-movetoworkspace, 10"
 
       # Scratchpad
       "$mod, S, togglespecialworkspace, magic"
-      "$shiftMod, S, movetoworkspace, special:magic"
+      "$shiftMod, S, split-movetoworkspace, special:magic"
     ];
 
     binde = [

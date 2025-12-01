@@ -1,13 +1,5 @@
 { pkgs, ... }: {
   plugins = {
-    # Snippets
-    luasnip = {
-      enable = true;
-      fromVscode = [
-        { paths = "${pkgs.vimPlugins.friendly-snippets}"; }
-      ];
-    };
-
     # Blink completion extensions
     blink-cmp-dictionary.enable = true;
     blink-cmp-spell.enable = true;
@@ -40,14 +32,8 @@
         };
         signature.enabled = true;
         sources = {
-          default = [ "lsp" "path" "luasnip" "buffer" ];
+          default = [ "lsp" "path" "buffer" ];
           cmdline = [ ];
-          providers = {
-            luasnip = {
-              name = "luasnip";
-              module = "blink.cmp.sources.luasnip";
-            };
-          };
         };
       };
     };
