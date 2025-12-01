@@ -9,7 +9,6 @@
     bindi = [ "$mod, Super_L, global, caelestia:launcher" ];
 
     bindin = [
-      "$mod, catchall, global, caelestia:launcherInterrupt"
       "$mod, mouse:272, global, caelestia:launcherInterrupt"
       "$mod, mouse:273, global, caelestia:launcherInterrupt"
     ];
