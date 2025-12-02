@@ -1,7 +1,8 @@
 { pkgs, ... }:
 
 {
-  home.packages = with pkgs; [
-    dbeaver
-  ];
+  home.packages = with pkgs;
+    [
+      #dbeaver
+    ];
 }

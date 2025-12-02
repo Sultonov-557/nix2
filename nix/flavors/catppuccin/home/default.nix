@@ -24,7 +24,6 @@
     ../../../modules/home/utils/btop.nix
     ../../../modules/home/desktop/cliphist.nix
     ../../../modules/home/desktop/udiskie.nix
-    ../../../modules/home/desktop/thumbnails.nix
     ../../../modules/home/desktop/audio.nix
     ../../../modules/home/communication/discord.nix
     ../../../modules/home/communication/telegram.nix
@@ -33,6 +32,7 @@
     ../../../modules/home/productivity/obsidian.nix
     ../../../modules/home/productivity/khal.nix
     ../../../modules/home/productivity/todoist.nix
+    ../../../modules/home/gaming/minecraft.nix
 
     ./stylix.nix
     ./nixvim.nix
