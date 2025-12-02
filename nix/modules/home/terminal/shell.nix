@@ -14,6 +14,11 @@
         "sudo"
         "docker"
         "kubectl"
+        "aliases"
+        "bun"
+        "history-substring-search"
+        "colored-man-pages"
+        "command-not-found"
       ];
       theme = "robbyrussell";
     };
@@ -57,9 +62,21 @@
     enableZshIntegration = true;
   };
 
-  home.packages = with pkgs; [
-    ripgrep
-    fd
-    eza
-  ];
+  programs.atuin = {
+    enable = true;
+    enableZshIntegration = true;
+    settings = {
+      auto_sync = true;
+      sync_frequency = "10m";
+      search_mode = "fuzzy";
+    };
+  };
+
+  programs.pay-respects = {
+    enable = true;
+    options = [ "--alias" "f" ];
+    enableZshIntegration = true;
+  };
+
+  home.packages = with pkgs; [ ripgrep fd eza ];
 }
