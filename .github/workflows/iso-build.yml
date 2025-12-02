@@ -1,0 +1,31 @@
+name: "Build ISO"
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+
+jobs:
+  build-iso:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: cachix/install-nix-action@v20
+        with:
+          nix_path: nixpkgs=channel:nixos-unstable
+          extra_nix_config: |
+            experimental-features = nix-command flakes
+            
+      # TODO: This is a placeholder. A real ISO build would require
+      # a nixosConfiguration that is configured to produce an ISO.
+      # We would also need to decide which flavor to build, or build
+      icor per flavor.
+      # For now, we just build the default configuration to ensure it builds.
+      - name: Build NixOS configuration
+        run: nix build .#home-pc
+
+      # - name: Upload ISO artifact
+      #   uses: actions/upload-artifact@v3
+      #   with:
+      #     name: nixul-iso
+      #     path: result/iso/*.iso

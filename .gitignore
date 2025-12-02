@@ -1,0 +1,16 @@
+# Nix build results
+result*
+
+# IDE files
+.vscode/
+.idea/
+
+# Environment secrets
+.envrc
+.env
+
+# MacOS files
+.DS_Store
+
+# Logs
+*.log
