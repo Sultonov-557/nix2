@@ -66,6 +66,9 @@
       ''$mod SHIFT, 4, exec, grim -g "$(slurp)" - | swappy -f -''
     ];
 
-    bindm = [ "$mod, mouse:272, movewindow" "$mod, mouse:273, resizewindow" ];
+    bindm = [
+      "$mod, mouse:272, movewindow"
+      "$mod, mouse:273, resizewindow"
+    ];
   };
 }

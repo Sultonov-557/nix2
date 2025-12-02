@@ -1,4 +1,5 @@
-{ inputs, ... }: {
+{ inputs, ... }:
+{
   imports = [ inputs.caelestia-shell.homeManagerModules.default ];
 
   programs.caelestia = {
@@ -9,11 +10,19 @@
       target = "graphical-session.target";
     };
 
-    settings = { paths = { wallpaperDir = ../assets; }; };
+    settings = {
+      paths = {
+        wallpaperDir = ../assets;
+      };
+    };
 
     cli = {
       enable = true;
-      settings = { theme = { enableGtk = true; }; };
+      settings = {
+        theme = {
+          enableGtk = true;
+        };
+      };
     };
   };
 }

@@ -7,7 +7,12 @@
         FIX = {
           icon = " ";
           color = "error";
-          alt = [ "FIXME" "BUG" "FIXIT" "ISSUE" ];
+          alt = [
+            "FIXME"
+            "BUG"
+            "FIXIT"
+            "ISSUE"
+          ];
         };
         TODO = {
           icon = " ";
@@ -20,11 +25,18 @@
         WARN = {
           icon = " ";
           color = "warning";
-          alt = [ "WARNING" "XXX" ];
+          alt = [
+            "WARNING"
+            "XXX"
+          ];
         };
         PERF = {
           icon = " ";
-          alt = [ "OPTIM" "PERFORMANCE" "OPTIMIZE" ];
+          alt = [
+            "OPTIM"
+            "PERFORMANCE"
+            "OPTIMIZE"
+          ];
         };
         NOTE = {
           icon = " ";
@@ -34,7 +46,11 @@
         TEST = {
           icon = "⏲ ";
           color = "test";
-          alt = [ "TESTING" "PASSED" "FAILED" ];
+          alt = [
+            "TESTING"
+            "PASSED"
+            "FAILED"
+          ];
         };
       };
     };

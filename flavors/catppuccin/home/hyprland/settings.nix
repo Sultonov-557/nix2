@@ -6,7 +6,10 @@
       "HDMI-A-1,1280x1024@60,1920x0,1"
     ];
 
-    env = [ "XCURSOR_SIZE,24" "HYPRCURSOR_SIZE,24" ];
+    env = [
+      "XCURSOR_SIZE,24"
+      "HYPRCURSOR_SIZE,24"
+    ];
 
     exec-once = [ "hyprpaper" ];
 
@@ -43,7 +46,7 @@
     animations = {
       enabled = true;
       bezier = "smoothOut, 0.36, 0, 0.66, -0.56";
-      
+
       animation = [
         "windows, 1, 5, smoothOut, slide"
         "windowsOut, 1, 4, smoothOut, slide"
@@ -68,7 +71,9 @@
       kb_layout = "us";
       follow_mouse = 1;
 
-      touchpad = { natural_scroll = true; };
+      touchpad = {
+        natural_scroll = true;
+      };
 
       sensitivity = 0;
     };

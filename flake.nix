@@ -113,7 +113,7 @@
 
       mkSpecialisations =
         flavors:
-        builtins.mapAttrs (name: flavor: {
+        builtins.mapAttrs (_: flavor: {
           inheritParentConfig = true;
           configuration = flavor.specialisation;
         }) flavors;

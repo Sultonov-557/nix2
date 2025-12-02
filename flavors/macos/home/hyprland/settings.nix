@@ -6,7 +6,10 @@
       "HDMI-A-1,1280x1024@60,1920x0,1"
     ];
 
-    env = [ "XCURSOR_SIZE,24" "HYPRCURSOR_SIZE,24" ];
+    env = [
+      "XCURSOR_SIZE,24"
+      "HYPRCURSOR_SIZE,24"
+    ];
 
     exec-once = [ "hyprpaper" ];
 
@@ -61,7 +64,9 @@
       kb_layout = "us";
       follow_mouse = 1;
 
-      touchpad = { natural_scroll = true; };
+      touchpad = {
+        natural_scroll = true;
+      };
 
       sensitivity = 0;
     };

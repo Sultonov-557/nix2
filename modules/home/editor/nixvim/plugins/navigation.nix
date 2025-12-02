@@ -38,7 +38,9 @@
       enable = true;
       settings = {
         columns = [ "icon" ];
-        view_options = { show_hidden = true; };
+        view_options = {
+          show_hidden = true;
+        };
         keymaps = {
           "g?" = "actions.show_help";
           "<CR>" = "actions.select";

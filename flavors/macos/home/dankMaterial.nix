@@ -1,4 +1,4 @@
-{ ... }: {
-  xdg.configFile."dankMaterialShell/settings.json".source =
-    ../assets/dankSettings.json;
+{ ... }:
+{
+  xdg.configFile."dankMaterialShell/settings.json".source = ../assets/dankSettings.json;
 }

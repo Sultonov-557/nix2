@@ -20,9 +20,13 @@
       size = 24;
     };
 
-    gtk3.extraConfig = { gtk-application-prefer-dark-theme = true; };
+    gtk3.extraConfig = {
+      gtk-application-prefer-dark-theme = true;
+    };
 
-    gtk4.extraConfig = { gtk-application-prefer-dark-theme = true; };
+    gtk4.extraConfig = {
+      gtk-application-prefer-dark-theme = true;
+    };
   };
 
   home.pointerCursor = {
