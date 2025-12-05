@@ -46,11 +46,11 @@ We'll use **Semantic Versioning** (`vX.Y.Z`).
 *   [x] Initial repository structure.
 *   [x] Core `catppuccin` and `macos` flavors.
 *   [x] Basic documentation.
-*   [ ] Automated flake checks.
+*   [x] Automated flake checks.
 
 #### Version 0.2.0: Community & Polish
 
-*   [ ] Automated ISO builds.
+*   [x] Automated ISO builds.
 *   [ ] At least two new community-submitted Flavors.
 *   [ ] A command-line tool for easily switching flavors.
 *   [ ] A community "Flavor Jam" to encourage new creations.

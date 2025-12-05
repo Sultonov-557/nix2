@@ -13,10 +13,10 @@
 
 <div align="center">
 
-[![Nix Flake Check](https://img.shields.io/github/actions/workflow/status/your-username/nixul/flake-check.yml?branch=main&label=Flake%20Check&style=for-the-badge)](https://github.com/your-username/nixul/actions/workflows/flake-check.yml)
-[![License](https://img.shields.io/github/license/your-username/nixul?style=for-the-badge)](./LICENSE)
-[![GitHub Stars](https://img.shields.io/github/stars/your-username/nixul?style=for-the-badge)](https://github.com/your-username/nixul/stargazers)
-[![Discord](https://img.shields.io/discord/your-server-id?style=for-the-badge&logo=discord&label=Join%20Us)](https://discord.gg/your-invite-link)
+[![Nix Flake Check](https://img.shields.io/github/actions/workflow/status/Sultonov-557/nixul/flake-check.yml?branch=main&label=Flake%20Check&style=for-the-badge)](https://github.com/Sultonov-557/nixul/actions/workflows/flake-check.yml)
+[![License](https://img.shields.io/github/license/Sultonov-557/nixul?style=for-the-badge)](./LICENSE)
+[![GitHub Stars](https://img.shields.io/github/stars/Sultonov-557/nixul?style=for-the-badge)](https://github.com/Sultonv-557/nixul/stargazers)
+[![Latest Release](https://img.shields.io/github/v/release/Sultonov-557/nixul?style=for-the-badge)](https://github.com/Sultonov-557/nixul/releases)
 
 </div>
 
@@ -31,10 +31,11 @@ No more tweaking configs for hours to get the look you want. With Nixul, you cho
 ### ✨ Features
 
 *   **Flavor System:** Instantly change your system's entire aesthetic. From `catppuccin`'s cozy pastels to `macos`'s sleek minimalism, there's a Flavor for every mood.
+*   **Graphical ISO Installer:** Boot into a live Hyprland environment with a beautiful GUI installer powered by Calamares.
 *   **Built on Nix:** Leverage the power, reproducibility, and reliability of NixOS.
 *   **Modular & Lightweight:** The base system is minimal. You only get what you need.
 *   **Community-Driven:** Create and share your own Flavors with the community.
-*   **Developer Friendly:** Comes with a pre-configured `nix-shell` for development.
+*   **Developer Friendly:** Comes with a pre-configured development environment including Docker, PostgreSQL, and Redis support.
 
 ---
 
@@ -91,14 +92,29 @@ When you build your system, Nix combines your host-specific configuration, the g
 
 ### 🚀 Installation
 
-Ready to give it a spin? The installation is straightforward, especially if you're familiar with Nix.
+Ready to give it a spin? We now offer **two easy ways** to install Nixul:
+
+#### Option 1: Graphical ISO Installer (Recommended)
+
+1.  **Build the ISO:**
+    ```bash
+    nix build github:Sultonov-557/nixul#iso
+    ```
+2.  **Flash to USB:** Use `dd`, Etcher, or Ventoy to create a bootable USB.
+3.  **Boot and Install:** Boot from USB into a beautiful Hyprland environment, then use the graphical installer to set up Nixul with your preferred flavor.
+
+#### Option 2: Manual Installation
 
 1.  **Prepare a NixOS installation medium.**
-2.  **Clone this repository.**
+2.  **Clone this repository:**
+    ```bash
+    git clone https://github.com/Sultonov-557/nixul nixul
+    cd nixul
+    ```
 3.  **Configure your `flake.nix` to choose a host and flavor.**
 4.  **Run the installer.**
 
-For a full, step-by-step guide, check out our installation documentation.
+For detailed instructions, including how to create your own host configuration:
 
 **[➡️ Full Installation Guide](./docs/installation.md)**
 
@@ -120,7 +136,7 @@ Have more questions? We've got answers.
 
 Nixul is just getting started. Here's what we have planned:
 
-*   **Automated ISO Builds:** Easy-to-install images for every Flavor.
+*   **✅ Automated ISO Builds:** Easy-to-install images with Hyprland GUI installer.
 *   **More Flavors:** We're always cooking up new styles.
 *   **A Command-Line Flavor Switcher:** Change your vibe without touching a config file.
 *   **Community Flavor Repository:** A place to share and discover new Flavors.

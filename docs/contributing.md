@@ -5,10 +5,10 @@ Nixul is a community-driven project, and we'd love your help to make it even bet
 ## Ways to Contribute
 
 *   **Create a Flavor:** The most obvious way to contribute is to create and submit your own Flavor. Check out our [guide to creating a Flavor](./creating-a-flavor.md) to get started.
-*   **Report Bugs:** If you find a bug, please [open an issue](https://github.com/your-username/nixul/issues). Be as descriptive as possible, and include steps to reproduce the issue.
-*   **Suggest Features:** Have an idea for a new feature? We'd love to hear it. [Open an issue](https://github.com/your-username/nixul/issues) and tell us about it.
+*   **Report Bugs:** If you find a bug, please [open an issue](https://github.com/Sultonov-557/nixul/issues). Be as descriptive as possible, and include steps to reproduce the issue.
+*   **Suggest Features:** Have an idea for a new feature? We'd love to hear it. [Open an issue](https://github.com/Sultonov-557/nixul/issues) and tell us about it.
 *   **Improve the Documentation:** Good documentation is key. If you see something that's unclear or could be improved, feel free to open a Pull Request.
-*   **Fix Bugs:** Check out the [issue tracker](https://github.com/your-username/nixul/issues) for bugs that need fixing.
+*   **Fix Bugs:** Check out the [issue tracker](https://github.com/Sultonov-557/nixul/issues) for bugs that need fixing.
 
 ## Submitting Changes
 

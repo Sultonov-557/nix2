@@ -1,0 +1,54 @@
+name: Build and Release ISO
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+  workflow_dispatch:
+
+jobs:
+  build-iso:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Nix
+        uses: DeterminateSystems/nix-installer-action@main
+
+      - name: Setup Nix cache
+        uses: DeterminateSystems/magic-nix-cache-action@main
+
+      - name: Build ISO
+        run: |
+          nix build .#iso --show-trace
+          ls -lh result/iso/
+
+      - name: Get tag name
+        id: tag
+        run: echo "TAG_NAME=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: result/iso/*.iso
+          body: |
+            # Nixul ${{ steps.tag.outputs.TAG_NAME }}
+            
+            ## Installation
+            
+            Download the ISO and flash it to a USB drive:
+            ```bash
+            dd if=nixos-hyprland.iso of=/dev/sdX bs=4M status=progress
+            ```
+            
+            Or use [balenaEtcher](https://www.balena.io/etcher/) for a graphical option.
+            
+            ## What's New
+            
+            Check the [CHANGELOG](./CHANGELOG.md) for details.
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

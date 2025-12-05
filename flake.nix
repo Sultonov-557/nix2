@@ -1,5 +1,5 @@
 {
-  description = "My Minimal NixOS Config";
+  description = "Nixul: Your OS, Your Flavor - A modular NixOS configuration system";
 
   inputs = {
     # Core
@@ -83,6 +83,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # ISO builder
+    nixos-generators = {
+      url = "github:nix-community/nixos-generators";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # Dev tools
     pre-commit-hooks = {
       url = "github:cachix/pre-commit-hooks.nix";
@@ -135,6 +141,10 @@
           value = lib.mkSystem { inherit hostname hostsDir flavors; };
         }) hostNames
       );
+
+      packages.${system} = import ./nix/iso/builder.nix {
+        inherit inputs system;
+      };
 
       checks.${system}.pre-commit = preCommitCheck;
       devShells.${system}.default = pkgs.mkShell {

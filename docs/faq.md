@@ -22,10 +22,6 @@ Got questions? We've got answers.
 
 **A:** You can add your own packages and configurations in your host-specific directory (`nix/hosts/your-hostname/`). This is the best place to put things that are unique to your machine.
 
-### Q: Where did the name "Nixul" come from?
-
-**A:** It's a play on "Nix" and "soul" (or "ghoul"). The idea is that you're changing the "soul" of your OS with Flavors. Plus, it sounds cool.
-
 ### Q: How can I help?
 
 **A:** We're so glad you asked! Check out our [contributing guide](./contributing.md) to learn how you can get involved.
