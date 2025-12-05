@@ -37,7 +37,7 @@
   ];
 
   home-manager.users.nixos = {
-    imports = [ ../../../flavors/macos/home ];
+    imports = [ ../../../hosts/iso/home.nix ];
 
     home = {
       username = "nixos";

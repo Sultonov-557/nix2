@@ -24,8 +24,4 @@
   isoImage.isoName = "nixos-hyprland.iso";
   isoImage.makeEfiBootable = true;
   isoImage.makeUsbBootable = true;
-  isoImage.squashfsCompression = "zstd -Xcompression-level 15";
-
-  documentation.enable = false;
-  documentation.nixos.enable = false;
 }
