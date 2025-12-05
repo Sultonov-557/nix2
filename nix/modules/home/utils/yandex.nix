@@ -1,1 +1,4 @@
-{ pkgs, ... }: { home.packages = with pkgs; [ yandex-music ]; }
+{ pkgs, ... }:
+{
+  home.packages = with pkgs; [ yandex-music ];
+}
