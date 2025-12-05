@@ -1,11 +1,7 @@
 { inputs, system }:
 
 let
-  inherit (inputs) nixpkgs nixos-generators;
-
-  pkgs = nixpkgs.legacyPackages.${system};
-
-  lib = import ../lib { inherit inputs; };
+  inherit (inputs) nixos-generators;
 in
 {
   iso = nixos-generators.nixosGenerate {
