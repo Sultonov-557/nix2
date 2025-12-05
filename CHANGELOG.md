@@ -35,3 +35,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Github actions flake checks on push
 - ISO installer
+
+## [0.2.1] - Git Optimizations
+
+### Added
+- Added 15 level compression to iso build
+- Added github actions free space
