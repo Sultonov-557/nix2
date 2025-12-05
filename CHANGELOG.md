@@ -29,3 +29,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Stylix theming support
 - Developer tools (Docker, PostgreSQL, Redis)
 - Basic documentation (README, FAQ, installation guide)
+
+## [0.2.0] - Git and ISO builds
+
+### Added
+- Github actions flake checks on push
+- ISO installer
