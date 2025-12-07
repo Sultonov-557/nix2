@@ -43,8 +43,8 @@
     ./nixvim.nix
     ./caelestia.nix
 
-    ./niri/settings.nix
-    ./niri/keybinds.nix
-    ./niri/rules.nix
+    #./niri/settings.nix
+    #./niri/keybinds.nix
+    #./niri/rules.nix
   ];
 }

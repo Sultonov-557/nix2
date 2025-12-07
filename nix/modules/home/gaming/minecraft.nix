@@ -4,8 +4,7 @@
   programs.xmcl = {
     enable = true;
     commandLineArgs = [ ''--password-store="gnome-libsecret"'' ];
-    jres = [ pkgs.jre8 pkgs.temurin-jre-bin-17 ];
+    jres = [ pkgs.jre8 pkgs.temurin-jre-bin-17 pkgs.temurin-jre-bin-21 ];
   };
 
-  programs.nix-ld.libraries = [ pkgs.jre8 pkgs.temurin-jre-bin-17 ];
 }
