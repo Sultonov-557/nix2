@@ -10,7 +10,7 @@ in
 
     enabledExtensions = with spicePkgs.extensions; [
       fullAppDisplay
-      shuffle # shuffle+ (special characters are sanitized out of ext names)
+      shuffle
       hidePodcasts
       adblockify
     ];

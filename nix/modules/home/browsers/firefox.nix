@@ -6,7 +6,6 @@
     enable = true;
     profile = "default";
     config = {
-      # Optional config
     };
   };
 
