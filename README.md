@@ -31,7 +31,6 @@ No more tweaking configs for hours to get the look you want. With Nixul, you cho
 ### ✨ Features
 
 *   **Flavor System:** Instantly change your system's entire aesthetic. From `catppuccin`'s cozy pastels to `macos`'s sleek minimalism, there's a Flavor for every mood.
-*   **Graphical ISO Installer:** Boot into a live Hyprland environment with a beautiful GUI installer powered by Calamares.
 *   **Built on Nix:** Leverage the power, reproducibility, and reliability of NixOS.
 *   **Modular & Lightweight:** The base system is minimal. You only get what you need.
 *   **Community-Driven:** Create and share your own Flavors with the community.
@@ -92,18 +91,7 @@ When you build your system, Nix combines your host-specific configuration, the g
 
 ### 🚀 Installation
 
-Ready to give it a spin? We now offer **two easy ways** to install Nixul:
-
-#### Option 1: Graphical ISO Installer (Recommended)
-
-1.  **Build the ISO:**
-    ```bash
-    nix build github:Sultonov-557/nixul#iso
-    ```
-2.  **Flash to USB:** Use `dd`, Etcher, or Ventoy to create a bootable USB.
-3.  **Boot and Install:** Boot from USB into a beautiful Hyprland environment, then use the graphical installer to set up Nixul with your preferred flavor.
-
-#### Option 2: Manual Installation
+Ready to give it a spin?
 
 1.  **Prepare a NixOS installation medium.**
 2.  **Clone this repository:**
@@ -136,7 +124,6 @@ Have more questions? We've got answers.
 
 Nixul is just getting started. Here's what we have planned:
 
-*   **✅ Automated ISO Builds:** Easy-to-install images with Hyprland GUI installer.
 *   **More Flavors:** We're always cooking up new styles.
 *   **A Command-Line Flavor Switcher:** Change your vibe without touching a config file.
 *   **Community Flavor Repository:** A place to share and discover new Flavors.

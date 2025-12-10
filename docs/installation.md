@@ -4,79 +4,10 @@ So, you're ready to jump in? Let's get you set up with Nixul. The process is pre
 
 ## Prerequisites
 
-**Choose Your Path:**
-
-### Option 1: Graphical ISO Installer (Recommended for Beginners)
-
-If you're new to NixOS or prefer a graphical installation, you can use our custom Nixul ISO with Hyprland and a beautiful GUI installer.
-
-**What you need:**
-1. **A machine to install Nixul on** (bare-metal or VM).
-2. **The Nixul ISO** (instructions below).
-3. **A USB drive** (at least 4GB).
-4. **An internet connection.**
-
-**Quick Start:**
-1. Build the ISO: `nix build github:Sultonov-557/nixul#iso`
-2. Flash it to USB using `dd`, Etcher, or Ventoy
-3. Boot from USB and follow the graphical installer
-
-Skip to [ISO Installation](#iso-installation) for full details.
-
-### Option 2: Manual Installation (For NixOS Veterans)
-
-If you're comfortable with NixOS and want full control:
-
 1. **A machine you want to install Nixul on.** This can be a bare-metal machine or a virtual machine.
 2. **A bootable NixOS USB drive.** You can get the latest stable or unstable image from the [NixOS website](https://nixos.org/download.html).
 3. **An internet connection.**
 4. **A little bit of courage.** You're about to do something awesome.
-
----
-
-## ISO Installation
-
-### Step 1: Build or Download the ISO
-
-Build the Nixul ISO:
-```bash
-nix build github:Sultonov-557/nixul#iso
-```
-
-The ISO will be in `result/iso/`.
-
-### Step 2: Create a Bootable USB
-
-Flash the ISO to a USB drive:
-
-**Using dd (Linux):**
-```bash
-dd if=result/iso/nixos-hyprland.iso of=/dev/sdX bs=4M status=progress oflag=sync
-```
-
-**Using Etcher (All platforms):** Download [balenaEtcher](https://www.balena.io/etcher/) and flash the ISO.
-
-**Using Ventoy:** Simply copy the ISO file to your Ventoy USB drive.
-
-### Step 3: Boot from USB
-
-1. Insert the USB drive into your target machine
-2. Boot from the USB (usually F12, F2, or DEL during startup to access boot menu)
-3. Select the Nixul ISO from the boot menu
-
-### Step 4: Use the Graphical Installer
-
-You'll boot into a live Hyprland environment with auto-login. On the desktop, you'll find an "Install NixOS" icon.
-
-1. **Launch the installer** by clicking the desktop icon
-2. **Choose your language and keyboard layout**
-3. **Partition your disk** (the installer provides a GUI for this)
-4. **Create your user account** (this will be your main user)
-5. **Configure your system** (hostname, timezone, etc.)
-6. **Choose installation location** (the installer will use the Nixul configuration)
-7. **Install!**
-
-After installation, reboot into your new Nixul system with all flavors available as boot options!
 
 ---
 
@@ -101,6 +32,7 @@ Once you've partitioned and formatted, you'll need to mount your partitions to `
 ```bash
 # Example for a simple setup:
 mount /dev/disk/by-label/nixos /mnt
+mkdir -p /mnt/boot
 mount /dev/disk/by-label/boot /mnt/boot
 ```
 
