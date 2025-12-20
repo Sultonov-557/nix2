@@ -29,8 +29,12 @@ in
         inputs.nur.modules.nixos.default
         {
           specialisation = mkSpecialisations flavors;
-          home-manager.users.${user} = {
-            imports = [ ];
+          home-manager = {
+            useGlobalPkgs = true;
+            useUserPackages = true;
+
+            users.${user} = {
+            };
           };
         }
       ];

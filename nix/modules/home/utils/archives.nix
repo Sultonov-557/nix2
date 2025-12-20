@@ -5,7 +5,6 @@
     p7zip
     unzip
     zip
-    unrar
     file-roller
   ];
 }

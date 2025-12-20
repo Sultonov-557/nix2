@@ -44,8 +44,6 @@
   };
 
   home-manager = {
-    useGlobalPkgs = true;
-
     users.sultonov = {
       imports = [ ../../global/home ];
 

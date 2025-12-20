@@ -10,6 +10,7 @@
           nixfmt.enable = true;
           prettier = {
             enable = true;
+            disableTsServerFormatter = true;
             settings = ''
               {
                 extra_args = { "--no-semi", "--single-quote" },

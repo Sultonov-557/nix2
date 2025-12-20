@@ -111,13 +111,15 @@
       };
     };
 
-    nvim-colorizer = {
+    colorizer = {
       enable = true;
-      userDefaultOptions = {
-        names = false;
-        rgb_fn = true;
-        hsl_fn = true;
-        tailwind = true;
+      settings = {
+        user_default_options = {
+          names = false;
+          rgb_fn = true;
+          hsl_fn = true;
+          tailwind = true;
+        };
       };
     };
 
@@ -127,11 +129,13 @@
 
     notify = {
       enable = true;
-      backgroundColour = "#000000";
-      fps = 60;
-      render = "default";
-      timeout = 3000;
-      topDown = true;
+      settings = {
+        backgroundColour = "#000000";
+        fps = 60;
+        render = "default";
+        timeout = 3000;
+        topDown = true;
+      };
     };
   };
 }

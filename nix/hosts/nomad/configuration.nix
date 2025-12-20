@@ -12,9 +12,6 @@
   networking.hostName = "nomad";
 
   home-manager = {
-    useGlobalPkgs = true;
-    useUserPackages = true;
-
     users.sultonov = {
       imports = [
         ../../global/home

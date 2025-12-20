@@ -3,27 +3,29 @@
     # File tree
     nvim-tree = {
       enable = true;
-      disableNetrw = true;
-      updateFocusedFile.enable = true;
-      renderer = {
-        groupEmpty = true;
-        highlightGit = true;
-        icons = {
-          show = {
-            file = true;
-            folder = true;
-            folderArrow = true;
-            git = true;
+      settings = {
+        disableNetrw = true;
+        updateFocusedFile.enable = true;
+        renderer = {
+          groupEmpty = true;
+          highlightGit = true;
+          icons = {
+            show = {
+              file = true;
+              folder = true;
+              folderArrow = true;
+              git = true;
+            };
           };
         };
-      };
-      view = {
-        width = 30;
-        side = "left";
-      };
-      filters = {
-        dotfiles = false;
-        custom = [ "^\\.git$" ];
+        view = {
+          width = 30;
+          side = "left";
+        };
+        filters = {
+          dotfiles = false;
+          custom = [ "^\\.git$" ];
+        };
       };
     };
 
@@ -71,9 +73,11 @@
     # Marks - Better mark visualization
     marks = {
       enable = true;
-      defaultMappings = true;
-      signs = true;
-      cyclic = true;
+      settings = {
+        defaultMappings = true;
+        signs = true;
+        cyclic = true;
+      };
     };
   };
 

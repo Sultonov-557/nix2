@@ -43,6 +43,7 @@
       neovim.enable = false;
       nixvim.enable = false;
       spicetify.enable = false;
+      firefox.enable = false;
     };
   };
 }

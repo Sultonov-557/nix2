@@ -30,29 +30,14 @@
     };
 
     #WM/DM
-    hyprland = {
-      url = "github:hyprwm/Hyprland/nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     niri = {
       url = "github:sodiboo/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    split-monitor-workspaces = {
-      url = "github:Duckonaut/split-monitor-workspaces/update-pin";
-      inputs.hyprland.follows = "hyprland";
-    };
-
     #Bar/Shell
-    dankMaterialShell = {
-      url = "github:AvengeMedia/DankMaterialShell";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    caelestia-shell = {
-      url = "github:caelestia-dots/shell";
+    dms = {
+      url = "github:AvengeMedia/DankMaterialShell/stable";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

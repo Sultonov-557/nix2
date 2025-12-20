@@ -5,7 +5,7 @@
     ../../../modules/home/editor/nixvim
     ../../../modules/home/editor/ai.nix
     ../../../modules/home/terminal/ghostty.nix
-    ../../../modules/home/desktop/hyprland.nix
+    ../../../modules/home/desktop/niri.nix
 
     ../../../modules/home/terminal/shell.nix
     ../../../modules/home/terminal/git.nix
@@ -21,7 +21,6 @@
     ../../../modules/home/utils/media.nix
     ../../../modules/home/utils/dbeaver.nix
     ../../../modules/home/utils/gimp.nix
-    ../../../modules/home/utils/aseprite.nix
     ../../../modules/home/utils/baobab.nix
     ../../../modules/home/utils/btop.nix
     ../../../modules/home/utils/yandex.nix
@@ -39,10 +38,6 @@
 
     ./stylix.nix
     ./nixvim.nix
-    ./caelestia.nix
-
-    ./hyprland/settings.nix
-    ./hyprland/keybinds.nix
-    ./hyprland/rules.nix
+    ./DMShell.nix
   ];
 }

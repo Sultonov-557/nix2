@@ -36,7 +36,7 @@
       grep = "rg";
     };
 
-    initExtra = ''
+    initContent = ''
       eval "$(zoxide init zsh)"
     '';
   };
