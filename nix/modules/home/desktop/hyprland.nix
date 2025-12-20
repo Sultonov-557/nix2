@@ -1,10 +1,9 @@
-{ inputs, pkgs, ... }:
+{ inputs, ... }:
 {
   wayland.windowManager.hyprland = {
     enable = true;
     xwayland.enable = true;
 
-    plugins = [
-    ];
+    plugins = [ ];
   };
 }
