@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{ pkgs, ... }: {
   programs.nh = {
     enable = true;
     clean.enable = true;
@@ -12,10 +11,10 @@
     separateDebugInfo = false;
   };
 
-  programs.nix-ld.libraries = [
-    pkgs.jre8
-    pkgs.temurin-jre-bin-17
-  ];
+  programs.nix-ld.libraries = [ pkgs.jre8 pkgs.temurin-jre-bin-17 ];
+
+  environment.pathsToLink =
+    [ "/share/applications" "/share/xdg-desktop-portal" ];
 
   nix.settings = {
     max-jobs = "auto";
@@ -24,10 +23,7 @@
     keep-outputs = false;
     keep-derivations = false;
 
-    experimental-features = [
-      "nix-command"
-      "flakes"
-    ];
+    experimental-features = [ "nix-command" "flakes" ];
 
     substituters = [
       "https://cache.nixos.org/"
@@ -40,7 +36,7 @@
       "niri.cachix.org-1:Wv0OmO7PsuocRKzfDoJ3mulSl7Z6oezYhGhR+3W2964="
       "nixpkgs.cachix.org-1:q91R6hxbwFvDqTSDKwDAV4T5PxqXGxswD8vhONFMeOE="
       "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
-      "hyprland.cachix.org-1:ZFI3rT84a1xr0EJ4yqVRK6p+Kx2HuhVE3rVb9VQwC5k="
+      "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
       "niri:7kPRy+bwoMP2GiLMR20qHUUiQ1Tg96YapZFsyvokm90="
     ];
 

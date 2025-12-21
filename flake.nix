@@ -1,5 +1,6 @@
 {
-  description = "Nixul: Your OS, Your Flavor - A modular NixOS configuration system";
+  description =
+    "Nixul: Your OS, Your Flavor - A modular NixOS configuration system";
 
   inputs = {
     # Core
@@ -35,6 +36,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    hyprland-virtual-desktops = {
+      url = "github:levnikmyskin/hyprland-virtual-desktops";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     #Bar/Shell
     dms = {
       url = "github:AvengeMedia/DankMaterialShell/stable";
@@ -64,9 +70,7 @@
       inputs.flake-parts.follows = "flake-parts";
     };
 
-    nix-flatpak = {
-      url = "github:gmodena/nix-flatpak/?ref=latest";
-    };
+    nix-flatpak = { url = "github:gmodena/nix-flatpak/?ref=latest"; };
 
     xmcl = {
       url = "github:x45iq/xmcl-nix";
@@ -75,8 +79,7 @@
 
   };
 
-  outputs =
-    { self, nixpkgs, ... }@inputs:
+  outputs = { self, nixpkgs, ... }@inputs:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -86,30 +89,21 @@
       flavorsDir = ./nix/flavors;
       flavorNames = builtins.attrNames (builtins.readDir flavorsDir);
 
-      flavors = builtins.listToAttrs (
-        map (name: {
-          name = name;
-          value = import (flavorsDir + "/${name}") { inherit inputs self; };
-        }) flavorNames
-      );
+      flavors = builtins.listToAttrs (map (name: {
+        name = name;
+        value = import (flavorsDir + "/${name}") { inherit inputs self; };
+      }) flavorNames);
 
       hostsDir = ./nix/hosts;
       hostNames = builtins.attrNames (builtins.readDir hostsDir);
-    in
-    {
-      nixosConfigurations = builtins.listToAttrs (
-        map (hostname: {
-          name = hostname;
-          value = lib.mkSystem { inherit hostname hostsDir flavors; };
-        }) hostNames
-      );
+    in {
+      nixosConfigurations = builtins.listToAttrs (map (hostname: {
+        name = hostname;
+        value = lib.mkSystem { inherit hostname hostsDir flavors; };
+      }) hostNames);
 
       devShells.${system}.default = pkgs.mkShell {
-        packages = with pkgs; [
-          nixfmt-rfc-style
-          deadnix
-          git
-        ];
+        packages = with pkgs; [ nixfmt-rfc-style deadnix git ];
       };
 
       formatter.${system} = pkgs.nixfmt-rfc-style;

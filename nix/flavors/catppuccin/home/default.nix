@@ -5,6 +5,7 @@
     ../../../modules/home/editor/nixvim
     ../../../modules/home/editor/ai.nix
     ../../../modules/home/terminal/ghostty.nix
+    ../../../modules/home/desktop/hyprland.nix
     ../../../modules/home/desktop/niri.nix
 
     ../../../modules/home/terminal/shell.nix
@@ -39,5 +40,9 @@
     ./stylix.nix
     ./nixvim.nix
     ./DMShell.nix
+
+    ./hyprland/keybinds.nix
+    ./hyprland/rules.nix
+    ./hyprland/settings.nix
   ];
 }
