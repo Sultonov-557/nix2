@@ -38,7 +38,7 @@
       "$shiftMod ALT, S, global, caelestia:screenshot"
       "$shiftMod, C, exec, hyprpicker -a"
 
-      "$mod, Return, exec, ghostty"
+      "$mod, Return, exec, foot"
       "$mod, E, exec, nautilus"
       "$mod, B, exec, firefox"
 

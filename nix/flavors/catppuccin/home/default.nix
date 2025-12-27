@@ -4,11 +4,11 @@
   imports = [
     ../../../modules/home/editor/nixvim
     ../../../modules/home/editor/ai.nix
-    ../../../modules/home/terminal/ghostty.nix
+    ../../../modules/home/terminal/foot.nix
     ../../../modules/home/desktop/hyprland.nix
     ../../../modules/home/desktop/niri.nix
 
-    ../../../modules/home/terminal/shell.nix
+    ../../../modules/home/terminal/zsh.nix
     ../../../modules/home/terminal/git.nix
     ../../../modules/home/terminal/bun.nix
     ../../../modules/home/terminal/lazydocker.nix

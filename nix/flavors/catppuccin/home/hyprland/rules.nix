@@ -9,6 +9,7 @@
 
       # Opacity rules for terminals
       "opacity 0.92 0.85, class:^(ghostty)$"
+      "opacity 0.92 0.85, class:^(foot)$"
       "opacity 0.92 0.85, class:^(kitty)$"
       "opacity 0.92 0.85, class:^(alacritty)$"
 
@@ -25,9 +26,6 @@
       "float, class:^(.*),title:^(Save File)$"
     ];
 
-    layerrule = [
-      "blur, caelestia"
-      "ignorezero, caelestia"
-    ];
+    layerrule = [ "blur, caelestia" "ignorezero, caelestia" ];
   };
 }

@@ -1,7 +1,9 @@
-{ ... }:
-{
+{ ... }: {
   programs.ghostty = {
     enable = true;
+    enableZshIntegration = true;
+    clearDefaultKeybinds = true;
+
     settings = {
       font-family = "JetBrainsMono Nerd Font";
       font-size = 12;
@@ -25,6 +27,10 @@
         "ctrl+shift+t=new_tab"
         "ctrl+shift+w=close_surface"
         "ctrl+shift+n=new_window"
+        "copy=copy_to_clipboard"
+        "paste=paste_from_clipboard"
+        "ctrl+==increase_font_size:1"
+        "ctrl+-=decrease_font_size:1"
       ];
     };
   };

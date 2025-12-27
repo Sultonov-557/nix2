@@ -74,16 +74,9 @@
 
   programs.pay-respects = {
     enable = true;
-    options = [
-      "--alias"
-      "f"
-    ];
+    options = [ "--alias" "f" ];
     enableZshIntegration = true;
   };
 
-  home.packages = with pkgs; [
-    ripgrep
-    fd
-    eza
-  ];
+  home.packages = with pkgs; [ ripgrep fd eza ];
 }
